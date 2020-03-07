@@ -25,8 +25,8 @@
                 "prismjs/themes/prism-dark.css"
             ]
         },
-        "github":{"url":"https://github.com/webChatContact/baas-v2-help"},
-        "editlink":{"base":"https://github.com/webChatContact"},
+        "github":{"url":"https://github.com/Enzo1994/gitbook/tree/master/"},
+        "editlink":{"base":"https://github.com/Enzo1994/gitbook/tree/master/"},
         "disqus":{"shortName":"123"},
         "tbfed-pagefooter": {
             "copyright": "",
