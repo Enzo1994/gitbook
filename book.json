@@ -22,7 +22,7 @@
     "pluginsConfig": {
         "prism": {
             "css": [
-                "prismjs/themes/prism-dark.css"
+                "prismjs/themes/prism-tomorrow.css"
             ]
         },
         "github":{"url":"https://github.com/Enzo1994/gitbook/tree/master/"},
