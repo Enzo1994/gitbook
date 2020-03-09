@@ -3,6 +3,7 @@
     "description": "demo",
     "language": "en",
     "plugins": [
+        "emphasize",
         "github",
         "editlink",
         "prism",
@@ -13,7 +14,8 @@
         "links",
         "chapter-fold",
         "todo",
-        "sitemap"
+        "sitemap",
+        "pageview-count"
     ],
 
     "styles": {
