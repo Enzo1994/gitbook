@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Object.assign · demo</title>
+        <title>Object.assign() · demo</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-dark.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
                 
             
                 
@@ -38,6 +42,10 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
                 
             
                 
@@ -66,6 +74,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="复制对象的几种方法.html" />
     
     
     <link rel="prev" href="./" />
@@ -143,7 +153,52 @@
                 <a href="Object.assign.html">
             
                     
-                    Object.assign
+                    Object.assign()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="复制对象的几种方法.html">
+            
+                <a href="复制对象的几种方法.html">
+            
+                    
+                    复制对象的几种方法.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../原型/">
+            
+                <a href="../原型/">
+            
+                    
+                    原型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../原型/Q&A1.html">
+            
+                <a href="../原型/Q&A1.html">
+            
+                    
+                    方法写在构造函数内和写在原型对象上的区别（3点）
             
                 </a>
             
@@ -191,7 +246,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Object.assign</a>
+        <a href="../.." >Object.assign()</a>
     </h1>
 </div>
 
@@ -208,13 +263,14 @@
                                 
                                 <h1 id="objectassign">Object.assign</h1>
 <h3 id="&#x7528;&#x6CD5;&#xFF1A;">&#x7528;&#x6CD5;&#xFF1A;</h3>
-<p><code>Object.assign(targetObject,...sourcesObject)</code></p>
+<pre class="language-"><code class="lang-js">Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>targetObject<span class="token punctuation">,</span><span class="token operator">...</span>sourcesObject<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="&#x529F;&#x80FD;&#xFF1A;">&#x529F;&#x80FD;&#xFF1A;</h3>
 <p>&#x5C06;&#x6240;&#x6709;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x4ECE;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6E90;&#x5BF9;&#x8C61;&#x590D;&#x5236;&#x5230;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD4;&#x56DE;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x3002;</p>
 <h3 id="&#x662F;&#x5426;&#x6DF1;&#x62F7;&#x8D1D;&#xFF1F;">&#x662F;&#x5426;&#x6DF1;&#x62F7;&#x8D1D;&#xFF1F;</h3>
 <p>&#x5426; </p>
 <footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-03-08 01:25:03
+2020-03-08 01:58:11
 </span></footer>
                                 
                                 </section>
@@ -242,10 +298,14 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Object对象">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Object对象">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="复制对象的几种方法.html" class="navigation navigation-next " aria-label="Next page: 复制对象的几种方法.md">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -254,7 +314,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Object.assign","level":"1.2.1.1","depth":3,"previous":{"title":"Object对象","level":"1.2.1","depth":2,"path":"Javascript基本功/Object对象/README.md","ref":"Javascript基本功/Object对象/README.md","articles":[{"title":"Object.assign","level":"1.2.1.1","depth":3,"path":"Javascript基本功/Object对象/Object.assign.md","ref":"Javascript基本功/Object对象/Object.assign.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","editlink","prism","splitter","tbfed-pagefooter","fontsettings","simple-page-toc","links","chapter-fold","todo","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-dark.css"]},"disqus":{"shortName":"123"},"github":{"url":"https://github.com/Enzo1994/gitbook/tree/master/"},"editlink":{"label":"Edit This Page","multilingual":false,"base":"https://github.com/Enzo1994/gitbook/tree/master/"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"sitemap":{"hostname":"http://baidu.com/"},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false},"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/webChatContact/baas-v2-help"},"editlink":{"base":"https://github.com/webChatContact","label":"编辑本页面"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sitemap":{"hostname":"http://baidu.com/"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"demo","language":"en","gitbook":"*","description":"demo"},"file":{"path":"Javascript基本功/Object对象/Object.assign.md","mtime":"2020-03-07T17:25:03.198Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-07T17:40:11.509Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Object.assign()","level":"1.2.1.1","depth":3,"next":{"title":"复制对象的几种方法.md","level":"1.2.1.2","depth":3,"path":"Javascript基本功/Object对象/复制对象的几种方法.md","ref":"Javascript基本功/Object对象/复制对象的几种方法.md","articles":[]},"previous":{"title":"Object对象","level":"1.2.1","depth":2,"path":"Javascript基本功/Object对象/README.md","ref":"Javascript基本功/Object对象/README.md","articles":[{"title":"Object.assign()","level":"1.2.1.1","depth":3,"path":"Javascript基本功/Object对象/Object.assign.md","ref":"Javascript基本功/Object对象/Object.assign.md","articles":[]},{"title":"复制对象的几种方法.md","level":"1.2.1.2","depth":3,"path":"Javascript基本功/Object对象/复制对象的几种方法.md","ref":"Javascript基本功/Object对象/复制对象的几种方法.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["emphasize","github","editlink","prism","splitter","tbfed-pagefooter","fontsettings","simple-page-toc","links","chapter-fold","todo","sitemap","pageview-count"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"disqus":{"shortName":"123"},"emphasize":{},"github":{"url":"https://github.com/Enzo1994/gitbook/tree/master/"},"editlink":{"label":"Edit This Page","multilingual":false,"base":"https://github.com/Enzo1994/gitbook/tree/master/"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"sitemap":{"hostname":"http://baidu.com/"},"pageview-count":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false},"disqus":{"shortName":"webpack-handbook"},"github":{"url":"https://github.com/webChatContact/baas-v2-help"},"editlink":{"base":"https://github.com/webChatContact","label":"编辑本页面"},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sitemap":{"hostname":"http://baidu.com/"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"demo","language":"en","gitbook":"*","description":"demo"},"file":{"path":"Javascript基本功/Object对象/Object.assign.md","mtime":"2020-03-07T17:58:11.740Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T15:58:44.277Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -285,6 +345,10 @@
     
         
         <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
         
     
         

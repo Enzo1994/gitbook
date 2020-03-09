@@ -4,4 +4,7 @@
 <url> <loc>http://baidu.com/Javascript基本功/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://baidu.com/Javascript基本功/Object对象/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://baidu.com/Javascript基本功/Object对象/Object.assign.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://baidu.com/Javascript基本功/Object对象/复制对象的几种方法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://baidu.com/Javascript基本功/原型/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://baidu.com/Javascript基本功/原型/Q&amp;A1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
