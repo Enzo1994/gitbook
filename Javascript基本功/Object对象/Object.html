@@ -1,17 +1,35 @@
 <script>
-    function MyObject(){
+    /* 构造函数內方法和原型上方法区别 */
+    function MyObject() {
         this.property = 123;
-        this.method = function(){
+        this.method = function () {
             document.write('这是构造函数內的方法')
         }
     }
     var obj = new MyObject();
-    for(var key in obj){
-        document.writeln('<div>' + key+ '</div>'+ '<div>' +obj[key] + '</div>')
+    console.log(obj.hasOwnProperty('method'));  // true
+    for (var key in obj) {
+        document.writeln('<div>' + key + '</div>' + '<div>' + obj[key] + '</div>')
     }
-    // obj.method()
+    obj.method()
 
-    // document.writeln('<div>123</div>')
-    // document.write('123')
-    // document.write('123')
+
+
+
+    /* for ... in ...*/
+    Function.prototype.alert = function (val) {
+        alert(val)
+    }
+    Object.defineProperty(Function.prototype, 'alert', {
+        // enumerable:false
+    })
+
+    var obj = function () {
+        alert(3)
+    }
+    console.log(Object.getOwnPropertyDescriptors(obj))
+    for (var key in obj) {
+        if (!obj.hasOwnProperty(key)) break;
+        console.log(key, obj[key]);
+    }
 </script>
