@@ -15,7 +15,8 @@
         "chapter-fold",
         "todo",
         "sitemap",
-        "pageview-count"
+        "pageview-count",
+        "summary"
     ],
 
     "styles": {
