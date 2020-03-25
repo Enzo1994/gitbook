@@ -1,5 +1,5 @@
 <script>
-    /* 构造函数內方法和原型上方法区别 */
+    /* 1. 构造函数內方法和原型上方法区别 */
     function MyObject() {
         this.property = 123;
         this.method = function () {
@@ -16,7 +16,7 @@
 
 
 
-    /* for ... in ...*/
+    /* 2. for ... in ...*/
     Function.prototype.alert = function (val) {
         alert(val)
     }
@@ -32,4 +32,6 @@
         if (!obj.hasOwnProperty(key)) break;
         console.log(key, obj[key]);
     }
+
+    
 </script>
