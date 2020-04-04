@@ -1,37 +1,74 @@
 <script>
-    /* 1. 构造函数內方法和原型上方法区别 */
-    function MyObject() {
-        this.property = 123;
-        this.method = function () {
-            document.write('这是构造函数內的方法')
-        }
-    }
-    var obj = new MyObject();
-    console.log(obj.hasOwnProperty('method'));  // true
-    for (var key in obj) {
-        document.writeln('<div>' + key + '</div>' + '<div>' + obj[key] + '</div>')
-    }
-    obj.method()
+  /* 1. 构造函数內方法和原型上方法区别 */
+  function MyObject() {
+    this.property = 123;
+    this.method = function() {
+      document.write("这是构造函数內的方法");
+    };
+  }
+  var obj = new MyObject();
+  console.log(obj.hasOwnProperty("method")); // true
+  for (var key in obj) {
+    document.writeln("<div>" + key + "</div>" + "<div>" + obj[key] + "</div>");
+  }
+  obj.method();
 
+  /* 2. for ... in ...*/
+  Function.prototype.alert = function(val) {
+    alert(val);
+  };
+  Object.defineProperty(Function.prototype, "alert", {
+    // enumerable:false
+  });
 
+  var obj = function() {
+    alert(3);
+  };
+  console.log(Object.getOwnPropertyDescriptors(obj));
+  for (var key in obj) {
+    if (!obj.hasOwnProperty(key)) break;
+    console.log(key, obj[key]);
+  }
 
+  /* 3. new */
+  function Parent() {
+    this.age = 3;
+  }
+  function myNew(fun) {
+    let obj = {};
+    obj.__proto__ = fun.prototype;
+    obj.__proto__.constructor = MyObject; // 实例不拥有构造函数属性，而是从其原型继承它
+    console.log("obj", obj);
+    fun.call(obj); // 函数调用会把函数里的this绑定，再通过call修改绑定到obj
+    console.log("obj2", obj);
 
-    /* 2. for ... in ...*/
-    Function.prototype.alert = function (val) {
-        alert(val)
-    }
-    Object.defineProperty(Function.prototype, 'alert', {
-        // enumerable:false
-    })
+    return obj;
+  }
+  console.log("my", myNew(Parent), "old", new Parent());
 
-    var obj = function () {
-        alert(3)
-    }
-    console.log(Object.getOwnPropertyDescriptors(obj))
-    for (var key in obj) {
-        if (!obj.hasOwnProperty(key)) break;
-        console.log(key, obj[key]);
-    }
+  // 构造函数关于
+  // https://stackoverflow.com/questions/13839318/javascript-override-date-prototype-constructor
 
-    
+  /* 4. 数组拷贝*/
+  let array1 = [1, { a: 33333 }, 3, 4, 5];
+  let array1Sliced = array1.slice(0); // [2,3]
+  let array1Assign = [...array1];
+  console.log(
+    "array1",
+    array1,
+    "array1Sliced",
+    array1Sliced,
+    "array1Assign",
+    array1Assign
+  );
+  array1Sliced[1].a = 999999;
+  array1Assign[1].a = 66666;
+  console.log(
+    "array1",
+    array1,
+    "array1Sliced",
+    array1Sliced,
+    "array1Assign",
+    array1Assign
+  );
 </script>
