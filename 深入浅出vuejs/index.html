@@ -1,0 +1,136 @@
+<body>
+  <div id="app">
+    <template>
+      {{ name }}
+      <!-- name 就是依赖 ，通过使用name调用getter，收集依赖-->
+    </template>
+  </div>
+  <script>
+    class Dep {
+      constructor() {
+        this.deps = [];
+      }
+      notify() {
+        const deps = this.deps.slice();
+        for (let item of deps) {
+          item.update();
+        }
+      }
+      addDep(dep) {
+        this.deps[0] = dep;
+      }
+      depend() {
+        if (window.target) {
+          this.addDep(window.target);
+        }
+      }
+      remove(sub) {
+        if (this.deps.length) {
+          const index = this.deps.indexOf(sub);
+          if (index > -1) {
+            return this.deps.splice(index, 1);
+          }
+        }
+      }
+    }
+    // 要通知谁？通知用到数据的地方，有可能是模板，也可能是用户写的watcher
+    // 我们把这个地方抽象成watcher，也就是要收集watcher
+    // 关键点：搞清楚watcher和依赖的关系
+    function defineReactive(obj, key, val) {
+      if (typeof val == "object") {
+        new Observer(val);
+      }
+      var dep = new Dep();
+      Object.defineProperty(obj, key, {
+        enumerable: true,
+        configurable: true,
+        get() {
+          // 通过get收集依赖
+          alert("get调用，收集依赖");
+          //   dep.push(window.target);
+          dep.depend();
+          console.log("dep.deps", dep.deps);
+          return val;
+        },
+        set(newVal) {
+          // 通过set通知依赖
+          if (newVal == val) {
+            return;
+          }
+          //   for (var i = 0; i < dep.length; i++) {
+          //     dep[i](newVal, val);
+          //   }
+          dep.notify();
+          alert("设置值了");
+          val = newVal;
+        },
+      });
+    }
+    var obj = { a: 3 };
+    defineReactive(obj, "a", obj.a);
+    obj.a = 6;
+    console.log(obj);
+
+    class Watcher {
+      constructor(vm, expOrFn, cb) {
+        this.vm = vm;
+        this.getter = parseExpOrFn(expOrFn); // 调用getter()会触发getter
+        this.cb = cb;
+        this.value = this.get();
+      }
+      get() {
+        window.target = this;
+        var value = this.getter.call(this.vm, this.vm);
+        window.target = null;
+        return value;
+      }
+      update() {
+        // 都是watcher来通知自己是否需要变化
+        const oldVal = this.value;
+        this.value = this.get();
+        this.cb.call(this.vm, this.value, oldVal);
+      }
+    }
+    function parseExpOrFn(str) {
+      const segments = str.split(".");
+      return function (obj) {
+        for (let key of segments) {
+          obj = obj[key];
+        }
+        return obj;
+      };
+    }
+    var a = { b: { c: 333 } };
+    parseExpOrFn("a.b.c")(window);
+
+    class Observer {
+      constructor(val) {
+        this.value = val;
+        if (!Array.isArray(val)) {
+          this.walk(val);
+        }
+      }
+      walk(obj) {
+        for (let key in obj) {
+          defineReactive(obj, key, obj[key]);
+        }
+      }
+    }
+    // 1. watcher内部取值，
+    // 2. 触发getter，
+    // 3. 通过window.target收集此watcher为依赖
+
+    var vm = {
+      a: 3,
+      b: { q: 5 },
+    };
+    new Observer(vm);
+    var $watch = function (expOrFn, cb) {
+      new Watcher(vm, expOrFn, cb);
+    };
+    $watch("b.q", (newVal, oldVal) => {
+      console.log(newVal, oldVal);
+    });
+    vm.b.q = 666; 
+  </script>
+</body>

@@ -1,0 +1,122 @@
+<body>
+  <div id="app"></div>
+  <button onclick="nextPage()">加载更多</button>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.6.11/vue.js"></script>
+<script>
+  var asdf = { b: 3 };
+  function aaa(a) {
+    a.b = 7;
+  }
+  aaa(asdf);
+  console.log("a", asdf);
+  let b = null;
+  const a = async () => {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    });
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        console.log(222);
+        resolve(3);
+      }, 1000);
+    });
+    if (b) b.call(this);
+  };
+  const init = () => {
+    b = a;
+    b();
+  };
+  // setTimeout(() => {
+  //   b = null;
+  // }, 2000);
+  // setTimeout(() => {
+  //   b = null;
+  // }, 3000);
+  setTimeout(() => {
+    b = null; 
+  }, 4000);
+  init();
+
+  // _loop = null;
+  // timer = null;
+  // count = 0;
+  // preventLoop = false;
+  // var btn = document.querySelector("button");
+  // const request = () =>
+  //   new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve("这是一次请求");
+  //     }, 3000);
+  //   });
+  // async function init() {
+  //   _loop = loop;
+  //   await loop();
+  // }
+  // async function loop() {
+  //   console.log("轮询", count++, "次");
+  //   await new Promise((resolve) => {
+  //     timer = setTimeout(() => {
+  //       resolve();
+  //     }, 2000);
+  //   });
+  //   if (!preventLoop) {
+  //     btn.disabled = true;
+
+  //     await request();
+  //     console.log("这是一次轮询请求");
+  //     btn.disabled = false;
+
+  //     if (_loop) {
+  //       return await _loop();
+  //     }
+  //   }
+  // }
+  // async function nextPage() {
+  //   clearTimeout(timer);
+  //   _loop = null;
+  //   preventLoop = true;
+  //   const res = await request();
+  //   console.log("这是一次翻页请求");
+  //   preventLoop = false;
+  //   _loop = loop;
+  //   await _loop();
+  // }
+  // init();
+
+  // const vm = new Vue({
+  //   template: `
+  //       <div>
+  //                           {{inputVal}}
+
+  //           <ul>
+  //               <li v-for="item in array" :key="item.value">
+  //                   <input v-model="item.inputVal"/>
+  //               </li>
+  //           </ul>
+  //           <button @click="deleteItem">移动</button>
+  //       </div>
+  //   `,
+  //   el: "#app",
+  //   data: {
+  //     abc: 123,
+  //     inputVal: "asdfsadfsadfasdf\nlsadfasd\rfasdf",
+  //     array: [
+  //       { value: 1, inputVal: "" },
+  //       { value: 2, inputVal: "" },
+  //       { value: 3, inputVal: "" },
+  //       { value: 4, inputVal: "" },
+  //       { value: 5, inputVal: "" },
+  //     ],
+  //   },
+  //   methods: {
+  //     deleteItem() {
+  //       console.log("array1", this.array);
+  //       this.array = this.array.filter((item) => item.value != 3);
+  //       console.log("array2", this.array);
+  //     },
+  //   },
+  // });
+</script>
