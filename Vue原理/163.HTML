@@ -1,0 +1,25 @@
+<script>
+  var obj = {
+    a: 3,
+    b: { q: 5 },
+  };
+  var _value = obj.a; // 必须得先拿到值，才能在get里返回
+  var _ = console.log;
+
+  Object.defineProperty(obj, "a", {
+    set: (newVal) => {
+      _("set a value");
+      _value = newVal;
+      return _value;
+    },
+    get: () => {
+      _("知道属性在哪几个页面用了，收集在哪几个组件使用，只更新属性用到的组件");
+      return _value;
+    },
+  });
+  obj.a, obj;
+
+  class Vue {
+    constructor() {}
+  }
+</script>

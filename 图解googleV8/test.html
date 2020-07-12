@@ -1,0 +1,13 @@
+<script>
+  var global;
+  function abc() {
+    var abcVar = "abcvar";
+    console.log(123);
+    function bcd() {
+      var bcdVar = "bcdVar";
+      console.log(this);
+    }
+    bcd();
+  }
+  abc();
+</script>
